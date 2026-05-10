@@ -1,0 +1,288 @@
+@font-face {
+	font-family: VCR;
+	src: url(VCR_OSD_MONO_1.001.ttf);
+}
+
+body {
+	background-color: black;
+	color: white;
+	font-family:VCR;
+}
+
+.title {
+	text-align: center;
+	font-size: 100px;
+}
+
+.top-row {
+  display: flex;
+  justify-content: center;
+  margin-top: -6rem;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 25px;
+  margin-top: -65px;
+  font-family: Arial;
+}
+
+.wip-container {
+  display: flex;
+  justify-content: end;
+  padding-right: 0rem;
+  margin-top: -5rem;  
+}
+
+.wip {
+  width: 150px;
+  max-width: 150px;
+  height: auto;
+  margin-top: 5rem;
+}
+
+.wip:hover {
+  content: url(assets/img/site/sketchbook_glow.png)
+}
+
+.top-nav {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.wip-sign {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 500px;
+  padding-top: 2rem;
+}
+
+.back-button {
+  width: 125px;
+  max-width: 125px;
+  height: auto;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 5rem 7rem 0;
+}
+
+.tv-container {
+  display: flex;
+  order: 3;
+  padding-right: 2em;
+}
+
+.tv {
+  width: 270px;
+  max-width: 270px;
+  height: auto;
+}
+
+.tv:hover {
+  content: url(assets/img/site/tv_on.png)
+}
+
+.camera-container {
+  display: flex;
+  order: 1;
+  margin-top: 25px;
+  padding-left: 2rem;
+}
+
+.camera {
+  width: 270px;
+  max-width: 270px;
+  height: auto;
+}
+
+.camera:hover {
+  content: url(assets/img/site/cam_back.png)
+}
+
+.laptop-container {
+  display: flex;
+  order: 2;
+  padding-left: 3.5em;
+  margin-top: 7rem;
+}
+
+.laptop {
+  width: 270px;
+  max-width: 270px;
+  height: auto;
+}
+
+.laptop:hover {
+  content: url(assets/img/site/laptop_on.png)
+}
+
+.james-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.me {
+  width: 400px;
+  max-width: 400px;
+  height: auto;
+}
+
+.fire-container {
+  display: flex;
+  justify-content: center;
+}
+
+.fire {
+  width: 500px;
+  max-width: 500px;
+  height: auto;
+}
+
+.info {
+  font-family: Arial;
+  text-align: center;
+  font-size: 25px;
+  margin-top: 10px;
+}
+
+.ig-link:link {
+  color: #ea3326;
+}
+
+.ig-link:visited {
+  color: #ea3326;
+}
+
+.ig-link:hover {
+  color: #e9c862;
+}
+
+.project-title {
+  font-size: 50px;
+  text-align: center;
+  margin-top: 0rem;
+}
+
+.project-subtitle {
+  font-size: 30px;
+  text-align: center;
+  margin-top: -2rem;
+}
+
+.midnight-container1 {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  background-color: white;
+  margin-right: 55px;
+  margin-left: 55px;
+}
+
+.midnight-row1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  padding-top: 20px;  
+  padding-bottom: 20px;
+}
+
+.midnight-container2 {
+  display: flex;
+  justify-content: center;
+  margin-top: -1rem;
+  background-color: white;
+  margin-right: 55px;
+  margin-left: 55px;
+}
+
+.midnight-container3 {
+  display: flex;
+  justify-content: center;
+  margin-top: -1rem;
+  background-color: white;
+  margin-right: 55px;
+  margin-left: 55px;
+  margin-bottom: 1rem;
+}
+
+.desire-container1 {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  background-color: white;
+  margin-right: 220px;
+  margin-left: 220px;
+}
+
+.desire-row1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  padding-top: 20px;  
+  padding-bottom: 20px;
+}
+
+.desire-container2 {
+  display: flex;
+  justify-content: center;
+  margin-top: -1rem;
+  background-color: white;
+  margin-right: 220px;
+  margin-left: 220px;
+}
+
+.desire-container3 {
+  display: flex;
+  justify-content: center;
+  margin-top: -1rem;
+  background-color: white;
+  margin-right: 220px;
+  margin-left: 220px;
+}
+
+.desire-container4 {
+  display: flex;
+  justify-content: center;
+  margin-top: -1rem;
+  background-color: white;
+  margin-right: 220px;
+  margin-left: 220px;
+}
+
+.video-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.video-container {
+  position: relative;
+  width: 60%;
+  aspect-ratio: 16 / 9;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.taxi-credits {
+  font-family: Arial;
+  text-align: center;
+  font-size: 25px;
+  margin-top: 10px;
+}
+
