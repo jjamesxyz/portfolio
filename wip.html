@@ -1,21 +1,153 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<title>work in progress</title>
+	<meta charset="UTF-8">
 	<link rel="stylesheet" href="styles.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: black;
+    height: 100%;
+  }
+
+  #stage {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .item {
+    position: absolute;
+    width: 320px; /* bigger images */
+    opacity: 0;
+    transform: scale(0.9) translateY(40px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    pointer-events: none;
+
+    /* removed rounded corners */
+  }
+
+  .item.show {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+
+  .item img {
+    width: 100%;
+    display: block;
+
+    /* NO rounded corners */
+    border-radius: 0;
+
+    /* slight raw collage feel */
+    filter: contrast(1.05) saturate(1.1);
+  }
+
+</style>
 </head>
 
 <body>
 <div class="top-nav">
-	<a href="./"><img class="back-button" src="assets/img/site/back_arrow.png"></a>
+	<a href="index.html"><img class="back-button" src="assets/img/site/back_arrow.png"></a>
 	<img class="wip-sign" src="assets/img/wip/wip-sign.png">
 </div>
 
+<div id="stage">
 
-<body>
+  <div class="item" style="top:8%; left:15%;" data-threshold="0.05">
+    <img src="assets/img/wip/reality/wip1.jpg">
+  </div>
 
+  <div class="item" style="top:18%; left:28%;" data-threshold="0.10">
+    <img src="assets/img/wip/reality/wip2.jpg">
+  </div>
 
+  <div class="item" style="top:35%; left:15%;" data-threshold="0.15">
+    <img src="assets/img/wip/reality/wip3.jpg">
+  </div>
+
+  <div class="item" style="top:12%; left:65%;" data-threshold="0.20">
+    <img src="assets/img/wip/reality/wip4.jpg">
+  </div>
+
+  <div class="item" style="top:55%; left:25%;" data-threshold="0.25">
+    <img src="assets/img/wip/reality/wip5.jpg">
+  </div>
+
+  <div class="item" style="top:60%; left:60%;" data-threshold="0.30">
+    <img src="assets/img/wip/reality/wip6.png">
+  </div>
+
+  <div class="item" style="top:32%; left:82%; width:13%;" data-threshold="0.35">
+    <img src="assets/img/wip/reality/wip7.jpg">
+  </div>
+
+  <div class="item" style="top:60%; left:40%;" data-threshold="0.40">
+    <img src="assets/img/wip/reality/wip8.jpg">
+  </div>
+
+  <div class="item" style="top:10%; left:47%; width:15%;" data-threshold="0.50">
+    <img src="assets/img/wip/reality/wip9.jpg">
+  </div>
+
+  <div class="item" style="top:60%; left:80%;" data-threshold="0.60">
+    <img src="assets/img/wip/reality/wip10.jpg">
+  </div>
+
+  <div class="item" style="top:60%; left:3%; width:20%;" data-threshold="0.70">
+    <img src="assets/img/wip/reality/wip11.jpg">
+  </div>
+
+  <!-- gifs -->
+  <div class="item" style="top:30%; left:5%;" data-threshold="0.80">
+    <img src="assets/img/wip/reality/wip_vid1.gif">
+  </div>
+
+  <div class="item" style="top:35%; left:40%; width:25%;" data-threshold="0.90">
+    <img src="assets/img/wip/reality/wip_vid2.gif">
+  </div>
+
+  <div class="item" style="top:5%; left:80%;" data-threshold="1.00">
+    <img src="assets/img/wip/reality/wip_vid3.gif">
+  </div>
+
+</div>
+
+<script>
+  let progress = 0;
+  const items = document.querySelectorAll(".item");
+
+  function update() {
+    items.forEach(el => {
+      const t = parseFloat(el.dataset.threshold);
+
+      if (progress >= t) {
+        el.classList.add("show");
+      } else {
+        el.classList.remove("show"); // important for scroll-up hiding
+      }
+    });
+  }
+
+  window.addEventListener("wheel", (e) => {
+    e.preventDefault();
+
+    progress += e.deltaY * 0.0012; // slightly faster feel
+    progress = Math.max(0, Math.min(1, progress));
+
+    update();
+  }, { passive: false });
+
+  update();
+</script>
 
 </body>
+
+
+
 </html>
