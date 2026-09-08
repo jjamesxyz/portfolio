@@ -1,363 +1,83 @@
-@font-face {
-	font-family: VCR;
-	src: url(VCR_OSD_MONO_1.001.ttf);
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-	background-color: black;
-	color: white;
-	font-family:VCR;
-}
-
-.title {
-	text-align: center;
-	font-size: 100px;
-}
-
-.top-row {
-  display: flex;
-  justify-content: center;
-  margin-top: -6rem;
-}
-
-.subtitle {
-  text-align: center;
-  font-size: 25px;
-  margin-top: -65px;
-  font-family: Arial;
-}
-
-.wip-container {
-  display: flex;
-  justify-content: end;
-  padding-right: 0rem;
-  margin-top: -5rem;  
-}
-
-.wip {
-  width: 150px;
-  max-width: 150px;
-  height: auto;
-  margin-top: 5rem;
-}
-
-.wip:hover {
-  content: url(assets/img/site/sketchbook_glow.png)
-}
-
-.top-nav {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-.wip-sign {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 500px;
-  padding-top: 2rem;
-}
-
-.back-button {
-  width: 125px;
-  max-width: 125px;
-  height: auto;
-  margin-top: 10px;
-  margin-left: 10px;
-}
-
-.row {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 5rem 7rem 0;
-}
-
-.tv-container {
-  display: flex;
-  order: 3;
-  padding-right: 2em;
-}
-
-.tv {
-  width: 270px;
-  max-width: 270px;
-  height: auto;
-}
-
-.tv:hover {
-  content: url(assets/img/site/tv_on.png)
-}
-
-.camera-container {
-  display: flex;
-  order: 1;
-  margin-top: 25px;
-  padding-left: 2rem;
-}
-
-.camera {
-  width: 270px;
-  max-width: 270px;
-  height: auto;
-}
-
-.camera:hover {
-  content: url(assets/img/site/cam_back.png)
-}
-
-.laptop-container {
-  display: flex;
-  order: 2;
-  padding-left: 3.5em;
-  margin-top: 7rem;
-}
-
-.laptop {
-  width: 270px;
-  max-width: 270px;
-  height: auto;
-}
-
-.laptop:hover {
-  content: url(assets/img/site/laptop_on.png)
-}
-
-.tv-container,
-.camera-container,
-.laptop-container {
-  position: relative;
+  background-color: #9BAED3;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+ font-family: Arial, Helvetica, sans-serif;
 }
 
-.hover-text {
-  position: absolute;
-  bottom: -50px; /* sits under image */
-  left: 50%;
-  transform: translateX(-50%);
-  
-  opacity: 0;
-  transition: 0.25s ease;
-  
-  font-size: 1.5rem;
-  font-weight: 400;
-  text-decoration: underline;
-  white-space: nowrap;
-  pointer-events: none;
-}
-
-.tv-container:hover .hover-text,
-.camera-container:hover .hover-text,
-.laptop-container:hover .hover-text {
-  opacity: 1;
-}
-
-.tv-container:hover .hover-text,
-.camera-container:hover .hover-text,
-.laptop-container:hover .hover-text {
-  opacity: 1;
-  transform: translateX(-50%) translateY(-5px);
-}
-
-.james-container {
+/* Center Logo Header */
+.top-row {
   display: flex;
   justify-content: center;
-  margin-top: 1rem;
+  margin-bottom: 2rem;
 }
 
-.me {
-  width: 400px;
-  max-width: 400px;
+.logo {
+  width: 300px; /* Scales better than percentage */
+  max-width: 30vw;
   height: auto;
 }
 
-.fire-container {
+/* Main Container for Side-by-Side Items */
+.pages {
   display: flex;
   justify-content: center;
-}
-
-.fire {
-  width: 500px;
-  max-width: 500px;
-  height: auto;
-}
-
-.info {
-  font-family: Arial;
-  text-align: center;
-  font-size: 25px;
-  margin-top: 10px;
-}
-
-.ig-link:link {
-  color: #ea3326;
-}
-
-.ig-link:visited {
-  color: #ea3326;
-}
-
-.ig-link:hover {
-  color: #e9c862;
-}
-
-.project-title {
-  font-size: 50px;
-  text-align: center;
-  margin-top: 0rem;
-}
-
-.project-subtitle {
-  font-size: 30px;
-  text-align: center;
-  margin-top: -2rem;
-}
-
-.midnight-container1 {
-  display: flex;
-  justify-content: center;
-  margin-top: 1rem;
-  background-color: white;
-  margin-right: 55px;
-  margin-left: 55px;
-}
-
-.midnight-row1 {
-  display: flex;
-  justify-content: space-between;
   align-items: flex-start;
-  gap: 2rem;
-  padding-top: 20px;  
-  padding-bottom: 20px;
-}
-
-.midnight-container2 {
-  display: flex;
-  justify-content: center;
-  margin-top: -1rem;
-  background-color: white;
-  margin-right: 55px;
-  margin-left: 55px;
-}
-
-.midnight-container3 {
-  display: flex;
-  justify-content: center;
-  margin-top: -1rem;
-  background-color: white;
-  margin-right: 55px;
-  margin-left: 55px;
-  margin-bottom: 1rem;
-}
-
-.desire-container1 {
-  display: flex;
-  justify-content: center;
-  margin-top: 1rem;
-  background-color: white;
-  margin-right: 220px;
-  margin-left: 220px;
-}
-
-.desire-row1 {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 2rem;
-  padding-top: 20px;  
-  padding-bottom: 20px;
-}
-
-.desire-container2 {
-  display: flex;
-  justify-content: center;
-  margin-top: -1rem;
-  background-color: white;
-  margin-right: 220px;
-  margin-left: 220px;
-}
-
-.desire-container3 {
-  display: flex;
-  justify-content: center;
-  margin-top: -1rem;
-  background-color: white;
-  margin-right: 220px;
-  margin-left: 220px;
-}
-
-.desire-container4 {
-  display: flex;
-  justify-content: center;
-  margin-top: -1rem;
-  background-color: white;
-  margin-right: 220px;
-  margin-left: 220px;
-}
-
-.video-wrapper {
-  display: flex;
-  justify-content: center;
-}
-
-.video-container {
-  position: relative;
-  width: 60%;
-  aspect-ratio: 16 / 9;
-}
-
-.video-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
+  gap: 250px; /* Controls the gap between CRT and Apple */
+  padding-top: 10vh;
   width: 100%;
-  height: 100%;
+  max-width: 750px;
 }
 
-.taxi-credits {
-  font-family: Arial;
+/* Individual Card (Image + Text underneath) */
+.nav-item {
+  display: flex;
+  flex-direction: column; /* Stacks image top, text bottom */
+  align-items: center;
   text-align: center;
-  font-size: 25px;
+  flex: 1; /* Keeps both buttons equal width */
+  max-width: 300px;
+}
+
+/* Base Image Styling */
+.glow-btn {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  display: block;
+  transition: filter 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover Glow Effect */
+.glow-btn:hover {
+  filter: drop-shadow(0 0 15px #3165BE);
+}
+
+/* Captions directly underneath */
+.caption {
   margin-top: 10px;
-margin-bottom: 60px;
+  color: #1a1a1a;
+  font-weight: bold;
+  font-size: 1.1rem;
 }
 
-
-
-
-
-@media (max-width: 768px) {
-
-  .row {
-    flex-direction: column;
-    align-items: center;
-    gap: 4rem;
-    padding: 2rem;
+/* Mobile Tweaks (Optional: Reduces gap for tiny screens) */
+@media (max-width: 480px) {
+  .pages {
+    gap: 10px;
   }
-
-  .tv,
-  .camera,
-  .laptop {
-    width: 70vw;
-    max-width: 300px;
-  }
-
-  .reality-collage {
-    height: auto;
-  }
-
-  .c {
-    position: relative;
-    width: 80vw;
-    left: auto !important;
-    top: auto !important;
-    transform: none !important;
-    margin: 2rem auto;
-    display: block;
+  
+  .caption {
+    font-size: 0.95rem;
   }
 }
-
-
