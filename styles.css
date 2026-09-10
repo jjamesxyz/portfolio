@@ -121,7 +121,7 @@ font-size: 1.1rem;
 @media (max-width: 480px) {
 .pages {
 gap: 10px;
-}
+}}
 
 .caption {
 font-size: 0.95rem;
