@@ -1,127 +1,181 @@
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+box-sizing: border-box;
+margin: 0;
+padding: 0;
 }
 
 body {
-  background-color: #cae0ff;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 20px;
-  font-family: sans-serif;
+background-color: #cae0ff;
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: flex-start;
+padding: 20px;
+font-family:sans-serif;
+}
+
+html, body {
+margin: 0;
+padding: 0;
 }
 
 /* Center Logo Header */
 .title {
-  display: flex;
-  justify-content: center;
-  padding-top: 2vh;
-  width: 100%;
+display: flex;
+justify-content: center;
+padding-top: 2vh;
 }
 
-/* Dynamic Logo Scaling */
-.title-logo {
-  width: 550px;       /* Fixed size on laptop/desktop */
-  max-width: 90vw;    /* Shrinks proportionally on small mobile screens */
+.main-logo {
+  width: 550px;
+  max-width: 100%;
   height: auto;
-  display: block;
+}
+
+.title-text {
+font-size: 100px;
+}
+
+.logo {
+width: 300px; /* Scales better than percentage */
+max-width: 30vw;
+height: auto;
+}
+
+.top-nav {
+position: relative;
+display: flex;
+align-items: center;
+}
+
+.back-button {
+width: 125px;
+max-width: 125px;
+height: auto;
+margin-right: 1000px;
+}
+
+.back-button:hover {
+filter: drop-shadow(0 0 15px #3165BE);
+}
+
+.info-container {
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 100px; /* Controls the gap between CRT and Apple */
+padding-top: 15vh;
+width: 100%;
+max-width: 750px;
+}
+
+.virus-type {
+width: 400px;
 }
 
 /* Main Container for Side-by-Side Items */
 .pages {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 120px; /* Balanced desktop gap */
-  padding-top: 5vh;
-  width: 100%;
-  max-width: 750px;
+display: flex;
+justify-content: center;
+align-items: flex-start;
+gap: 250px; /* Controls the gap between CRT and Apple */
+padding-top: 5vh;
+width: 100%;
+max-width: 750px;
 }
 
 /* Individual Card (Image + Text underneath) */
 .nav-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  flex: 1;
-  max-width: 300px;
+display: flex;
+flex-direction: column; /* Stacks image top, text bottom */
+align-items: center;
+text-align: center;
+flex: 1; /* Keeps both buttons equal width */
+max-width: 300px;
 }
 
 /* Base Image Styling */
 .glow-btn {
-  width: 100%;
-  max-width: 250px;
-  height: auto;
-  display: block;
-  transition: filter 0.3s ease, transform 0.2s ease;
+width: 100%;
+max-width: 250px;
+height: auto;
+display: block;
+transition: filter 0.3s ease, transform 0.2s ease;
 }
 
 /* Hover Glow Effect */
 .glow-btn:hover {
-  filter: drop-shadow(0 0 15px #3165BE);
+filter: drop-shadow(0 0 15px #3165BE);
 }
 
 /* Captions directly underneath */
 .caption {
-  margin-top: 20px;
-  color: #1a1a1a;
-  font-weight: bold;
-  font-size: 1.1rem;
+margin-top: 20px;
+color: #1a1a1a;
+font-weight: bold;
+font-size: 1.1rem;
 }
 
-/* Mobile Tweaks: Keeps CRT & Apple side-by-side while narrowing the gap */
-@media (max-width: 768px) {
-  .pages {
-    gap: 20px; /* Reduced gap so icons remain side-by-side on phone screens */
-    padding-top: 4vh;
-  }
-  
-  .glow-btn {
-    max-width: 160px; /* Ensures icons fit on smaller mobile screens without clipping */
-  }
-
-  .caption {
-    font-size: 0.85rem;
-    margin-top: 10px;
-  }
+/* Mobile Tweaks (Optional: Reduces gap for tiny screens) */
+@media (max-width: 480px) {
+.pages {
+gap: 10px;
 }
 
-/* Section styling for work pages */
+.caption {
+font-size: 0.95rem;
+}
+
+.link:link {
+color: #316FD0;
+}
+
+.link:visited {
+color: #316FD0;
+}
+
+.link:hover {
+color: #e9c862;
+}
+
+/* Page reset to remove unwanted edge borders */
+html, body {
+margin: 0;
+padding: 0;
+}
+
+/* 2-Column Grid with perfectly matched gaps */
 .descent {
-  background-color: black;
-  width: 100%;
-  min-height: 100vh;
-  display: grid;
-  grid-template-columns: repeat(2, 22vw);
-  justify-content: center;
-  gap: 25px;
-  padding: 5vh 0;
+background-color: black;
+width: 100%;
+min-height: 100vh;
+display: grid;
+grid-template-columns: repeat(2, 22vw);
+justify-content: center; /* Centers the 2-column grid horizontally */
+gap: 25px; /* Sets EXACT 25px gap both horizontally and vertically */
+padding: 5vh 0; /* Padding only at top/bottom of the main section */
 }
 
-.descent img, 
+/* Ensure images and videos fill grid slots cleanly */
+.descent img,
 .descent video {
-  width: 100%;
-  height: auto;
-  display: block;
+width: 100%;
+height: auto;
+display: block;
 }
-
 .snowy {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 25px;
-  padding: 5vh 5vh;
-  width: 100%;
-  background-color: #6D8590;
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 25px;
+padding: 5vh 5vh;
+width: 100%;
+background-color: #6D8590;
 }
 
 .snowy img,
 .snowy video {
-  width: 25%;
-  height: auto;
+width: 25%;
+height: auto;
 }
