@@ -11,7 +11,7 @@
 
 
 video {
-  pointer-events: none; /* Prevents right-clicking and dragging the video file */
+  pointer-events: none; 
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   user-select: none;
@@ -26,7 +26,6 @@ body {
   justify-content: flex-start;
   padding: 20px;
   font-family:arial;
-
 }
 
 html, body {
@@ -34,7 +33,6 @@ html, body {
   padding: 0;
 }
 
-/* Center Logo Header */
 .title {
   display: flex;
   justify-content: center;
@@ -47,29 +45,26 @@ html, body {
   height: auto;
 }
 
-
 .title-text {
   font-size: 100px;
 }
 
 .logo {
-  width: 300px; /* Scales better than percentage */
+  width: 300px; 
   max-width: 30vw;
   height: auto;
 }
 
-/* Fixes the navbar to the top-left corner above all assets */
 .top-nav {
   position: absolute;
   top: 20px;
   left: 20px;
-  z-index: 9999; /* Higher z-index guarantees it sits above the video and text */
+  z-index: 9999; 
   line-height: 0;
 }
 
-/* Controls the small button scale and hover state */
 .backbutton {
-  width: 120px;          /* Small, compact size */
+  width: 120px;
   height: auto;
   display: block;
   cursor: pointer;
@@ -81,7 +76,6 @@ html, body {
   filter: drop-shadow(0 0 8px #3165BE);
 }
 
-/* Mobile size tweak */
 @media (max-width: 768px) {
   .top-nav {
     top: 15px;
@@ -89,18 +83,17 @@ html, body {
   }
 
   .backbutton {
-    width: 100px;        /* Slightly smaller for phone displays */
+    width: 100px;
   }
 }
 .back-button:hover {
   filter: drop-shadow(0 0 15px #3165BE);
 }
 
-/* Centered Contact Stack */
 .info-container {
   display: flex;
-  flex-direction: column; /* Stacks video on top, text on bottom */
-  align-items: center;    /* Centers video and text block horizontally */
+  flex-direction: column; 
+  align-items: center;
   justify-content: center;
   width: 100%;
   max-width: 800px;
@@ -108,16 +101,14 @@ html, body {
   padding: 60px 0px;
 }
 
-/* Constrained Earth Asset */
 .earth-video {
-  width: 400px;           /* Clean, fixed desktop size for the globe */
-  max-width: 80vw;        /* Keeps it from overflowing on small mobile screens */
+  width: 400px;
+  max-width: 80vw;
   height: auto;
   display: block;
-  margin-bottom: 0px;    /* Space between earth and bio text */
+  margin-bottom: 0px;
 }
 
-/* Text Styling */
 .info {
   margin-top: 25px;
   font-family: sans-serif;
@@ -126,28 +117,25 @@ html, body {
   color: #1a1a1a;
 }
 
-/* Main Container for Side-by-Side Items */
 .pages {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  gap: 250px; /* Controls the gap between CRT and Apple */
+  gap: 250px;
   padding-top: 10vh;
   width: 100%;
   max-width: 750px;
 }
 
-/* Individual Card (Image + Text underneath) */
 .nav-item {
   display: flex;
-  flex-direction: column; /* Stacks image top, text bottom */
+  flex-direction: column;
   align-items: center;
   text-align: center;
-  flex: 1; /* Keeps both buttons equal width */
+  flex: 1;
   max-width: 300px;
 }
 
-/* Base Image Styling */
 .glow-btn {
   width: 100%;
   max-width: 250px;
@@ -156,19 +144,16 @@ html, body {
   transition: filter 0.3s ease, transform 0.2s ease;
 }
 
-/* Hover Glow Effect */
 .glow-btn:hover {
   filter: drop-shadow(0 0 15px #3165BE);
 }
 
-/* Captions directly underneath */
 .caption {
   margin-top: 10px;
   color: black;
   font-size: 1.1rem;
 }
 
-/* Mobile Tweaks (Optional: Reduces gap for tiny screens) */
 @media (max-width: 480px) {
   .pages {
     gap: 10px;
@@ -191,7 +176,6 @@ html, body {
   color: #e9c862;
 }
 
-/* Page reset to remove unwanted edge borders */
 html, body {
   margin: 0;
   padding: 0;
@@ -209,7 +193,6 @@ html, body {
   justify-content: center;
 }
 
-/* 2-Column Grid with perfectly matched gaps */
 .descent {
   background-color: black;
   width: 100%;
@@ -217,13 +200,12 @@ html, body {
   
   display: grid;
   grid-template-columns: repeat(2, 26vw);
-  justify-content: center; /* Centers the 2-column grid horizontally */
+  justify-content: center;
   
-  gap: 25px; /* Sets EXACT 25px gap both horizontally and vertically */
-  padding: 5vh 0; /* Padding only at top/bottom of the main section */
+  gap: 25px;
+  padding: 5vh 0;
 }
 
-/* Ensure images and videos fill grid slots cleanly */
 .descent img, 
 .descent video {
   width: 100%;
@@ -254,15 +236,14 @@ html, body {
   padding-top: 5px;
   padding-bottom: 0px;
   display: flex;
-  flex-direction: column; /* Force vertical stacking */
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-/* Header Text Block */
 .animation-header {
   text-align: center;
-  margin-bottom: 25px; /* Spacing between subtitle and video */
+  margin-bottom: 25px;
   margin-top: 10px;
 }
 
@@ -274,12 +255,9 @@ html, body {
   font-weight: normal;
 }
 
-
-
-
 .animation-caption {
   text-align: center;
-  margin-top: 10px; /* Spacing between subtitle and video */
+  margin-top: 10px; 
   margin-bottom: 20px;
 }
 
@@ -294,7 +272,7 @@ html, body {
 
 .animation-subtitle {
   font-family: 'Times New Roman', Times, serif;
-  color: #aaaaaa; /* Muted gray contrast */
+  color: #aaaaaa;
   font-size: 1rem;
   margin: 3px 0 0 0;
 }
@@ -321,13 +299,12 @@ html, body {
   border: none;
 }
 
-
 .divider {
   width: 100%;
-  max-width: 800px;  /* Adjust this to make the line longer or shorter */
+  max-width: 800px; 
   border: none;
-  border-top: 3px solid #333333; /* Dark gray for a low-key separation */
-  margin: 10px auto; /* Centers the line and handles vertical spacing */
+  border-top: 3px solid #333333; 
+  margin: 10px auto; 
 }
 
 .portfolio-bottom {
@@ -337,7 +314,7 @@ html, body {
   padding-top: 0px;
   padding-bottom: 0px;
   display: flex;
-  flex-direction: column; /* Force vertical stacking */
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -356,15 +333,10 @@ html, body {
   height: auto;
 }
 
-/* ==========================================
-   MOBILE & RESPONSIVE BREAKPOINTS 
-   ========================================== */
-
 @media (max-width: 768px) {
 
-  /* 1. TOP LOGO & NAV BUTTON */
   .portfolio-logo {
-    width: 260px; /* Scales logo down slightly so back button doesn't cover it */
+    width: 260px;
   }
 
   .top-nav {
@@ -373,47 +345,44 @@ html, body {
   }
 
   .backbutton {
-    width: 65px; /* Scales hand icon down cleanly on mobile */
+    width: 65px;
   }
 
-  /* 2. DESCENT SECTION (2-Column Grid pushed to screen edges) */
   .descent {
-    grid-template-columns: repeat(2, 1fr); /* Uses fractional units instead of tiny 26vw */
-    gap: 10px;                             /* Tight gap between images/videos */
-    padding: 20px 10px;                    /* 10px outer margin against screen edges */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 20px 10px;
   }
 
-  /* 3. SNOWY SECTION (3-Column Flex stretched across viewport) */
   .snowy {
-    gap: 10px;                             /* Matches grid gap for consistency */
+    gap: 10px;
     padding: 20px 10px;
   }
 
   .snowy img,
   .snowy video {
-    width: calc(33.333% - 7px);           /* Stretches items edge-to-edge accounting for gap */
+    width: calc(33.333% - 7px);
   }
 
-  /* 4. REALITYSURF / ANIMATIONS (Full-bleed video players) */
   .realitysurf {
-    padding: 10px 10px 0 10px;            /* Tight 10px screen edge margin */
+    padding: 10px 10px 0 10px;
   }
 
   .video-wrapper {
-    width: 100%;                          /* Fills mobile screen width */
+    width: 100%;
   }
 
   .animation-title {
-    font-size: 1.5rem;                    /* Proportionate mobile heading sizes */
+    font-size: 1.5rem;
   }
 
   .animation-credits {
     font-size: 1.1rem;
-    padding: 0 10px;                      /* Prevents long text lines from touching edges */
+    padding: 0 10px;
   }
 
   .divider {
-    max-width: 90%;                       /* Lets divider line scale down naturally */
+    max-width: 90%;
     margin: 20px auto;
   }
 }
