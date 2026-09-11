@@ -12,6 +12,9 @@
 
 video {
   pointer-events: none; /* Prevents right-clicking and dragging the video file */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 body {
