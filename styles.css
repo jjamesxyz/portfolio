@@ -1,30 +1,35 @@
 * {
-box-sizing: border-box;
-margin: 0;
-padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+video {
+  pointer-events: none; /* Prevents right-clicking and dragging the video file */
 }
 
 body {
-background-color: #cae0ff;
-min-height: 100vh;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: flex-start;
-padding: 20px;
-font-family:sans-serif;
+  background-color: #a1bfe5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+  font-family:arial;
+
 }
 
 html, body {
-margin: 0;
-padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 /* Center Logo Header */
 .title {
-display: flex;
-justify-content: center;
-padding-top: 2vh;
+  display: flex;
+  justify-content: center;
+  padding-top: 2vh;
 }
 
 .main-logo {
@@ -33,149 +38,213 @@ padding-top: 2vh;
   height: auto;
 }
 
+
 .title-text {
-font-size: 100px;
+  font-size: 100px;
 }
 
 .logo {
-width: 300px; /* Scales better than percentage */
-max-width: 30vw;
-height: auto;
+  width: 300px; /* Scales better than percentage */
+  max-width: 30vw;
+  height: auto;
 }
 
+/* Fixes the navbar to the top-left corner above all assets */
 .top-nav {
-position: relative;
-display: flex;
-align-items: center;
+  position: fixed;
+  top: 20px;
+  left: 600px;
+  z-index: 9999; /* Higher z-index guarantees it sits above the video and text */
 }
 
-.back-button {
-width: 125px;
-max-width: 125px;
-height: auto;
-margin-right: 1000px;
+/* Controls the small button scale and hover state */
+.backbutton {
+  width: 120px;          /* Small, compact size */
+  height: auto;
+  display: block;
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease;
 }
 
+.backbutton:hover {
+  transform: scale(1.04);
+  filter: drop-shadow(0 0 8px #3165BE);
+}
+
+/* Mobile size tweak */
+@media (max-width: 768px) {
+  .top-nav {
+    top: 15px;
+    left: 15px;
+  }
+
+  .backbutton {
+    width: 100px;        /* Slightly smaller for phone displays */
+  }
+}
 .back-button:hover {
-filter: drop-shadow(0 0 15px #3165BE);
+  filter: drop-shadow(0 0 15px #3165BE);
 }
 
+/* Centered Contact Stack */
 .info-container {
-display: flex;
-justify-content: center;
-align-items: center;
-gap: 100px; /* Controls the gap between CRT and Apple */
-padding-top: 15vh;
-width: 100%;
-max-width: 750px;
+  display: flex;
+  flex-direction: column; /* Stacks video on top, text on bottom */
+  align-items: center;    /* Centers video and text block horizontally */
+  justify-content: center;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 100px 0px;
 }
 
-.virus-type {
-width: 400px;
+/* Constrained Earth Asset */
+.earth-video {
+  width: 400px;           /* Clean, fixed desktop size for the globe */
+  max-width: 80vw;        /* Keeps it from overflowing on small mobile screens */
+  height: auto;
+  display: block;
+  margin-bottom: 25px;    /* Space between earth and bio text */
+}
+
+/* Text Styling */
+.info {
+  font-family: sans-serif;
+  font-size: 1.3rem;
+  line-height: 1.2;
+  color: #1a1a1a;
+}
+
+
+
+.info {
+  
 }
 
 /* Main Container for Side-by-Side Items */
 .pages {
-display: flex;
-justify-content: center;
-align-items: flex-start;
-gap: 250px; /* Controls the gap between CRT and Apple */
-padding-top: 5vh;
-width: 100%;
-max-width: 750px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 250px; /* Controls the gap between CRT and Apple */
+  padding-top: 10vh;
+  width: 100%;
+  max-width: 750px;
 }
 
 /* Individual Card (Image + Text underneath) */
 .nav-item {
-display: flex;
-flex-direction: column; /* Stacks image top, text bottom */
-align-items: center;
-text-align: center;
-flex: 1; /* Keeps both buttons equal width */
-max-width: 300px;
+  display: flex;
+  flex-direction: column; /* Stacks image top, text bottom */
+  align-items: center;
+  text-align: center;
+  flex: 1; /* Keeps both buttons equal width */
+  max-width: 300px;
 }
 
 /* Base Image Styling */
 .glow-btn {
-width: 100%;
-max-width: 250px;
-height: auto;
-display: block;
-transition: filter 0.3s ease, transform 0.2s ease;
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  display: block;
+  transition: filter 0.3s ease, transform 0.2s ease;
 }
 
 /* Hover Glow Effect */
 .glow-btn:hover {
-filter: drop-shadow(0 0 15px #3165BE);
+  filter: drop-shadow(0 0 15px #3165BE);
 }
 
 /* Captions directly underneath */
 .caption {
-margin-top: 20px;
-color: #1a1a1a;
-font-weight: bold;
-font-size: 1.1rem;
+  margin-top: 10px;
+  color: black;
+  font-size: 1.1rem;
 }
 
 /* Mobile Tweaks (Optional: Reduces gap for tiny screens) */
 @media (max-width: 480px) {
-.pages {
-gap: 10px;
-}}
-
-.caption {
-font-size: 0.95rem;
+  .pages {
+    gap: 10px;
+  }
+  
+  .caption {
+    font-size: 0.95rem;
+  }
 }
 
 .link:link {
-color: #316FD0;
+  color: #316FD0;
 }
 
 .link:visited {
-color: #316FD0;
+  color: #316FD0;
 }
 
 .link:hover {
-color: #e9c862;
+  color: #e9c862;
 }
 
 /* Page reset to remove unwanted edge borders */
 html, body {
-margin: 0;
-padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 /* 2-Column Grid with perfectly matched gaps */
 .descent {
-background-color: black;
-width: 100%;
-min-height: 100vh;
-display: grid;
-grid-template-columns: repeat(2, 22vw);
-justify-content: center; /* Centers the 2-column grid horizontally */
-gap: 25px; /* Sets EXACT 25px gap both horizontally and vertically */
-padding: 5vh 0; /* Padding only at top/bottom of the main section */
+  background-color: black;
+  width: 100%;
+  min-height: 100vh;
+  
+  display: grid;
+  grid-template-columns: repeat(2, 25vw);
+  justify-content: center; /* Centers the 2-column grid horizontally */
+  
+  gap: 25px; /* Sets EXACT 25px gap both horizontally and vertically */
+  padding: 5vh 0; /* Padding only at top/bottom of the main section */
 }
 
 /* Ensure images and videos fill grid slots cleanly */
-.descent img,
+.descent img, 
 .descent video {
-width: 100%;
-height: auto;
-display: block;
+  width: 100%;
+  height: auto;
+  display: block;
 }
+
 .snowy {
-display: flex;
-justify-content: center;
-align-items: center;
-gap: 25px;
-padding: 5vh 5vh;
-width: 100%;
-background-color: #6D8590;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  padding: 5vh 5vh;
+  width: 100%;
+  background-color: #50A5FF;
 }
 
 .snowy img,
 .snowy video {
-width: 25%;
-height: auto;
+  width: 25%;
+  height: auto;
+}
+
+
+.realitysurf {
+  background-color: black;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.system-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 8px 16px;
+  color:black; 
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
 }
