@@ -21,25 +21,25 @@
 </div>
 
 <div class="butterfly">
-  <video autoplay muted loop playsinline preload="auto" disablepictureinpicture>
+  <video muted loop playsinline preload="auto" disablepictureinpicture>
     <source src="assets/3d/butterfly_clay.mp4">
   </video>
-  <video autoplay muted loop playsinline preload="auto" disablepictureinpicture>
+  <video muted loop playsinline preload="auto" disablepictureinpicture>
     <source src="assets/3d/butterfly_material.mp4">
   </video>
-  <video autoplay muted loop playsinline preload="auto" disablepictureinpicture>
+  <video muted loop playsinline preload="auto" disablepictureinpicture>
     <source src="assets/3d/butterfly_final.mp4">
   </video>
 </div>
 
 <div class="snail">
-  <video autoplay muted loop playsinline preload="auto" disablepictureinpicture>
+  <video muted loop playsinline preload="auto" disablepictureinpicture>
     <source src="assets/3d/snail_clay.mp4">
   </video>
-  <video autoplay muted loop playsinline preload="auto" disablepictureinpicture>
+  <video muted loop playsinline preload="auto" disablepictureinpicture>
     <source src="assets/3d/snail_material.mp4">
   </video>
-  <video autoplay muted loop playsinline preload="auto" disablepictureinpicture>
+  <video muted loop playsinline preload="auto" disablepictureinpicture>
     <source src="assets/3d/snail_final.mp4">
   </video>
 </div>
@@ -158,13 +158,46 @@
     <source src="assets/contact/earthspin.mp4" type="video/mp4">
   </video>
 
-  <a href="index.html">
+  <a href="./">
     <img class="backbutton" src="assets/back_button.png" alt="Back Home">
   </a>
 </div>
 
 
 
+<script>
+  function syncVideoGroup(containerSelector) {
+    const container = document.querySelector(containerSelector);
+    if (!container) return;
 
+    const videos = Array.from(container.querySelectorAll('video'));
+    let loadedCount = 0;
+
+    function checkAllReady() {
+      loadedCount++;
+      if (loadedCount === videos.length) {
+        // Reset playback position and start simultaneously
+        videos.forEach(video => {
+          video.currentTime = 0;
+          video.play().catch(err => console.log('Autoplay prevented:', err));
+        });
+      }
+    }
+
+    videos.forEach(video => {
+      // If the video is already ready (e.g. cached), increment count immediately
+      if (video.readyState >= 3) {
+        checkAllReady();
+      } else {
+        video.addEventListener('canplaythrough', checkAllReady, { once: true });
+      }
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    syncVideoGroup('.butterfly');
+    syncVideoGroup('.snail');
+  });
+</script>
 </body>
 </html>
